@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Asistencias</title>
+
+</head>
+
+<body>
+
+    <h1>Listado de asistencias</h1>
+
+    <a href="/asistencias/">
+        Ingresar asistencias
+    </a>
+
+    <hr>
+
+    {% for asistencia in asistencias %}
+
+    <p>
+        {{ asistencias.tipo_documento}}
+    </p>
+
+    <p>
+        {{ asistencias.documento }}
+    </p>
+
+    <p>
+        {{ asistencias.nombres}}
+    </p>
+
+    <p>
+        {{ asistencias.apellidos }}
+    </p>
+
+    <p>
+        {{ asistencias.whatsapp }}
+    </p>
+
+
+    <a href="/asistencias/detalle/{{ asistencias.id }}/">
+        Ver
+    </a>
+
+    |
+
+    <a href="/asistencias/editar/{{ asistencias.id }}/">
+        Editar
+    </a>
+
+    |
+
+    <a href="/asistencias/eliminar/{{ asistencias.id }}/">
+        Eliminar
+    </a>
+
+    <hr>
+
+    {% empty %}
+
+    <p>
+        No se han registrado asistencias.
+    </p>
+
+    {% endfor %}
+
+</body>
+
+</html>

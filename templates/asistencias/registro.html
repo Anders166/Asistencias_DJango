@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Asistencias</title>
+
+</head>
+
+<body>
+
+<h1>Asistencias</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <p>
+        <label>Ingrese el tipo de documento:</label><br>
+
+        <input
+            type="text"
+            name="tipo_documento"
+            value="{{ asistencias.tipo_documento|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>Ingrese el documento:</label><br>
+
+        <input
+            type="text"
+            name="documento"
+            value="{{ asistencias.documento|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>Ingrese sus nombres:</label><br>
+
+        <input
+            type="text"
+            name="nombres"
+            value="{{ asistencias.nombres|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>Ingrese sus apellidos:</label><br>
+
+        <input
+            type="text"
+            name="apellidos"
+            value="{{ asistencias.apellidos|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>Whatsapp:</label><br>
+
+        <input
+            type="text"
+            name="whatsapp"
+            value="{{ asistencias.whatsapp|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>Ingrese la fecha:</label><br>
+
+        <input
+            type="date"
+            name="fecha"
+            value="{{ asistencias.fecha|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>Ingrese el documento:</label><br>
+
+        <input
+            type="text"
+            name="asistio"
+            value="{{ asistencias.asistio|default:'' }}"
+            required
+        >
+    </p>
+
+
+    <button type="submit">
+        Guardar
+    </button>
+
+</form>
+
+<br>
+
+<a href="/asistencias/lista/">
+    Ver asistencias
+</a>
+
+</body>
+
+</html>
